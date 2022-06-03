@@ -1,0 +1,18 @@
+Objetivo: 
+-Que el visitante compré
+Funcionalidades: 
+-Carrito de compras
+-Selector multiple a la hora de entrar en las recargas de un juego
+Palabras claves:
+-Recargas
+-Paraguay
+-Cod mobile
+-free fire
+-diamantes
+-cod points
+-cp
+-Juegos
+Tipografía: Nunito Sans
+
+ IMPORTANTE:
+-Que el header se quede fijo

@@ -1,0 +1,205 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.encabezado__linea {
+  width: 60px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+  top: -7px;
+  margin-left: 7px;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover {
+  color: inherit;
+}
+
+.linea-divisoria {
+  display: inline-block;
+  background-color: #fff;
+  opacity: 1;
+  height: 2.5px;
+  max-width: 100%;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+.icono {
+  height: min-content;
+}
+
+.none {
+  display: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.btn-container {
+  position: relative;
+  overflow: visible;
+  background-color: #000;
+  width: max-content;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.boton-agregar-al-carrito {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #000;
+  font-weight: normal;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  transition-property: top, left;
+  transition-duration: 200ms;
+  position: relative;
+}
+.boton-agregar-al-carrito:hover {
+  top: -5px;
+  left: -5px;
+}
+
+.boton-agregar-al-carrito__none {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .boton-agregar-al-carrito__none {
+    display: block;
+  }
+
+  .boton-agregar-al-carrito {
+    width: max-content;
+  }
+}
+.logo {
+  max-width: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    max-width: 90px;
+  }
+
+  .carritoIcono {
+    font-size: 30px;
+  }
+}
+.recarga {
+  max-width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 200ms;
+}
+.recarga:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .recarga {
+    max-width: 300px;
+  }
+}
+.resaltadoFooter {
+  color: #fff;
+  font-weight: bold;
+}
+
+.textoFooter {
+  color: #fff;
+  font-weight: lighter;
+}
+
+.metodos {
+  max-width: 210px;
+}
+
+.iconoSocial {
+  display: inline-flex;
+  border-radius: 50%;
+  min-width: 40px;
+  height: 40px;
+  background-color: #fff;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  opacity: 0.8;
+  margin-right: 15px;
+  transition-property: color, opacity;
+  transition-duration: 200ms;
+}
+.iconoSocial:hover {
+  color: #000;
+  opacity: 1;
+}
+
+.linea-vertical-copyright {
+  background-color: #fff;
+  display: inline-block;
+  height: 30px;
+  width: 2px;
+  margin-right: 5px;
+}
+
+@media (min-width: 468px) {
+  .footer-item-none {
+    display: none !important;
+  }
+
+  .footer-item-block {
+    display: block !important;
+  }
+}
+.texto-oferta {
+  flex-basis: 70%;
+}
+
+.moneda {
+  flex-basis: 30%;
+  max-width: 80px;
+}
+
+.ofertas-item {
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #000;
+  max-width: 500px;
+  margin: auto;
+  font-weight: 400;
+  color: #fff;
+}
+
+.logo-juego {
+  max-width: 500px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,22 @@
+@use "generales";
+.texto-oferta{
+    flex-basis: 70%;
+}
+.moneda{
+    flex-basis: 30%;
+    max-width: 80px;
+}
+.ofertas-item{
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #000;
+    max-width: 500px;
+    margin: auto;
+    font-weight: 400;
+    color: #fff;
+}
+.logo-juego{
+    max-width: 500px;
+    margin: auto;
+}
