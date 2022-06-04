@@ -16,3 +16,4 @@ Tipografía: Nunito Sans
 
  IMPORTANTE:
 -Que el header se quede fijo
+-Que al carrito no se pueda acceder hasta agregar algún producto
