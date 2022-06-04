@@ -1,0 +1,42 @@
+.carrito{
+    width: 90vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    background-color: #000;
+    left: 10vw;
+}
+@media (max-width: 330px) {
+    .carrito{
+        width: 100vw;
+        left: 0;
+    }
+}
+@media (min-width: 576px) {
+    .carrito{
+        width: 65vw;
+        left: 35vw;
+    }
+}
+@media (min-width: 768px) {
+    .carrito{
+        width: 50vw;
+        left: 50vw;
+    }
+}
+@media (min-width: 1200px) {
+    .carrito{
+        width: 35vw;
+        left: 65vw;
+    }
+}
+
+.cerrar{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    img{
+        max-width: 35px;
+        float: right;
+    }
+}

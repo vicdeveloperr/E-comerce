@@ -35,3 +35,16 @@
         width: max-content;
     }
 }
+.carrito-btn{
+    min-width: 100%;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+.btn-carrito__icono{
+    display: inline-block;
+    max-width: 40px;
+}
