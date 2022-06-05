@@ -4,30 +4,26 @@
     position: fixed;
     z-index: 10;
     background-color: #000;
-    left: 10vw;
+    left: 100%;
 }
 @media (max-width: 330px) {
     .carrito{
         width: 100vw;
-        left: 0;
     }
 }
 @media (min-width: 576px) {
     .carrito{
         width: 65vw;
-        left: 35vw;
     }
 }
 @media (min-width: 768px) {
     .carrito{
         width: 50vw;
-        left: 50vw;
     }
 }
 @media (min-width: 1200px) {
     .carrito{
         width: 35vw;
-        left: 65vw;
     }
 }
 

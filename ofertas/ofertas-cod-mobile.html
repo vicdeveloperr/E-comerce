@@ -20,45 +20,35 @@
     <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
-<!-- CARRITO -->
-<div class="carrito p-4 d-none">
-    <button class="cerrar mb-3">
-        <img src="multimedia/iconos/close.png" alt="Cerrar" aria-labelledby="Cerrar" class="img-fluid">
-    </button>
-    <div class="carrito__lista">
-        <div class="ofertas-item d-flex justify-content-between pe-3 px-md-4">
-            <div class="moneda">
-                <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
-            </div>
-            <p class="texto-oferta fs-4 d-flex justify-content-between align-items-center m-0">
-                80 CP
-                <span class="precio">Gs 9.000</span>
-            </p>
-        </div>
-        <span class="linea-divisoria col-12"></span>
-    </div>
-    <span class="carrito__precio-total fs-4 text-white fw-bold">
-        Total: Gs <span id="carritoPrecio">9.000</span>
-    </span>
-        <button class="carrito-btn mt-3 d-flex align-items-center justify-content-center fs-4">
-            <span class="btn-carrito__icono"><img src="multimedia/iconos/compras.gif" alt="Comprar gif" class="img-fluid"></span> LISTO!
+    <!-- CARRITO -->
+    <div class="carrito p-4">
+        <button class="cerrar mb-3" id="cerrar-carrito">
+            <img src="../multimedia/iconos/close.png" alt="Cerrar" aria-labelledby="Cerrar" class="img-fluid">
         </button>
-</div>
-<!-- HEADER -->
-<header class="header bg-black">
-    <div class="container">
-        <div class="row px-0 py-3 px-sm-3">
-            <div class="col d-flex h-100 justify-content-between">
-                <a href="../index.html" class="logo">
-                    <img src="../multimedia/logos/logo.png" alt="Logo Recargas Rodry" class="img-fluid">
-                </a>
-                <button class="carritoIcono text-white m-0 align-self-center fs-4">
-                    <i class="fas fa-shopping-cart"></i> Gs <span id="costo">5.000</span>
-                </button>
+        <div class="carrito__lista">
+        </div>
+        <span class="carrito__precio-total fs-4 text-white fw-bold">
+            Total: Gs <span class="mostrar-costo"></span>
+        </span>
+        <button class="carrito-btn mt-3 d-flex align-items-center justify-content-center fs-4">
+                <span class="btn-carrito__icono"><img src="../multimedia/iconos/compras.gif" alt="Comprar gif" class="img-fluid"></span> LISTO!
+        </button>
+    </div>
+    <!-- HEADER -->
+    <header class="header bg-black">
+        <div class="container">
+            <div class="row px-0 py-3 px-sm-3">
+                <div class="col d-flex h-100 justify-content-between">
+                    <a href="../index.html" class="logo">
+                        <img src="../multimedia/logos/logo.png" alt="Logo Recargas Rodry" class="img-fluid">
+                    </a>
+                    <button id="desplegar-carrito" class="carritoIcono text-white m-0 align-self-center fs-4">
+                        <i class="fas fa-shopping-cart"></i> Gs <span class="mostrar-costo"></span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 <!-- MAIN -->
 <main class="main my-5">
     <div class="container">
@@ -85,7 +75,7 @@
                     </p>
                 </div>
 
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -95,7 +85,7 @@
                     </p>
                 </div>
 
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -105,7 +95,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -115,7 +105,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -125,7 +115,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -135,7 +125,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -145,7 +135,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -155,7 +145,7 @@
                     </p>
                 </div>
 
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -165,7 +155,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -175,7 +165,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -185,7 +175,7 @@
                     </p>
                 </div>
     
-                <div class="ofertas-item mt-3 mt-sm-4 bg-black d-flex justify-content-between pe-3 px-md-4">
+                <div class="ofertas-item mt-3 mt-sm-4 d-flex justify-content-between pe-3 px-md-4">
                     <div class="moneda">
                         <img src="../multimedia/juegos/cp.png" alt="Cod points" class="img-fluid">
                     </div>
@@ -197,7 +187,7 @@
         </div>
 
         <div class="btn-container">
-            <button class="carritoIcono boton-agregar-al-carrito mt-3 d-flex align-items-center justify-content-center fs-4">
+            <button class="carritoIcono boton-agregar-al-carrito mt-3 d-flex align-items-center justify-content-center fs-4" id="agregar-al-carrito">
                 <i class="fas fa-shopping-cart icono me-2"></i>AGREGAR <span class="boton-agregar-al-carrito__none">AL CARRITO</span>
             </button>
         </div>
@@ -271,5 +261,6 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="../cerebro/index.js"></script>
 </html>
