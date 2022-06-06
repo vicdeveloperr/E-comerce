@@ -20,6 +20,7 @@ $("#cerrar-carrito").on("click", function(){
     carrito.animate({
         left: "100vw"
     }, 200)
+    $(".oferta-seleccionada").children(".eliminar-item").remove();
 });
 // SELECCIONAR OFERTAS
 let ofertas;
@@ -33,7 +34,6 @@ function clickOfertas(){
 // GUARDAR LAS OFERTAS SELECCIONADAS
 let ofertasSeleccionada = [];
 let items = [];
-let precioTotal = 0;
 let posicion;
 let agregar;
 let lista = [{
@@ -66,7 +66,7 @@ let lista = [{
 }, 
 {
     precio: 145,
-    recarga: "2400"
+    recarga: "2400cp"
 }, 
 {
     precio: 195,
@@ -101,19 +101,16 @@ $("#agregar-al-carrito").on("click", function(){
             posicion = items[i];
             agregar = lista[posicion];
             ofertasSeleccionada.push(agregar);
-            console.log(ofertasSeleccionada[i]);
-            // CALCULAAR COSTO TOTAL
-            precioTotal += ofertasSeleccionada[i].precio;
-            $(".mostrar-costo").text(`${precioTotal}.000`);
+            console.log(agregar);
         }
         carritoItems = true;
         carritoInterfaz();
-        eliminarItem();    
+        eliminarItem()
+        calcularCosto();
     }else{
         false;
     }
     // VACIAR ARRAYS
-    ofertasSeleccionada.length = 0;
     items.length = 0;
     $(".oferta-seleccionada").removeClass("oferta-seleccionada");
 });
@@ -124,7 +121,7 @@ function carritoInterfaz(){
     $(".oferta-seleccionada").css({
         color: "#fff",
         fontWeight: "bold",
-        border: "2px solid transparent",
+        border: "2px solid #000",
         borderBottomColor: "#fff" 
     });
     for(i=0; items.length > i; i++){
@@ -143,22 +140,47 @@ function carritoInterfaz(){
         $(this).children(".eliminar-item").animate({
             left: "100%",
             opacity: "0.7"
-        }, 200)
+        }, 50)
     });
 }
 // ELIMINAR ITEMS
 let devolverItem;
+
 function eliminarItem(){
     $(".eliminar-item").on("click", function(){
         $(this).parent().css({
             fontWeight: "400",
             border: "none",
+            zIndex: "20"
     });
         $(this).parent().removeClass("carrito-item");
         devolverItem = $(this).parent()[0];
+        // ELIMINAR ITEMS DE LA LISTA
+
+        let element = $(this).parent();
+        let recarga = element.children(".texto-oferta").children(".recarga").text().replace(/ /g, "").toLowerCase();
+        for(i=0; ofertasSeleccionada.length > i; i++){
+           if(ofertasSeleccionada[i].recarga == recarga){
+               let a = i+1;
+               ofertasSeleccionada.splice(i, a);
+           }else{
+               false;
+           }
+        }
+        calcularCosto();
     // DEVOLVER ITEMS A LA LISTA DE OFERTAS
         $(".ofertas-container").prepend(devolverItem);   
-        $(this).remove();
-    // CALCULAR MONTO TOTAL
+        $(".ofertas-container").children(".ofertas-item").children(".eliminar-item").remove();
     });
+}
+// CALCULAAR COSTO TOTAL
+let sumar;
+let precioTotal;
+function calcularCosto(){
+    precioTotal = 0;
+    for(i=0; ofertasSeleccionada.length > i; i++){
+        sumar = ofertasSeleccionada[i].precio;
+        precioTotal += sumar;
+        $(".mostrar-costo").text(`${precioTotal}.000`);
+    }
 }
