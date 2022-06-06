@@ -24,13 +24,13 @@ $("#cerrar-carrito").on("click", function(){
 });
 // SELECCIONAR OFERTAS
 let ofertas;
-clickOfertas();
 function clickOfertas(){
     ofertas = $(".ofertas-item");
     ofertas.on("click", function(){
         $(this).toggleClass("oferta-seleccionada");
     });
 }
+clickOfertas();
 // GUARDAR LAS OFERTAS SELECCIONADAS
 let ofertasSeleccionada = [];
 let items = [];
@@ -109,6 +109,7 @@ $("#agregar-al-carrito").on("click", function(){
         calcularCosto();
     }else{
         false;
+        carritoItems = false;
     }
     // VACIAR ARRAYS
     items.length = 0;
@@ -162,11 +163,12 @@ function eliminarItem(){
         for(i=0; ofertasSeleccionada.length > i; i++){
            if(ofertasSeleccionada[i].recarga == recarga){
                let a = i+1;
-               ofertasSeleccionada.splice(i, a);
+               ofertasSeleccionada.splice(i, 1);
            }else{
                false;
            }
         }
+        verificarItems();
         calcularCosto();
     // DEVOLVER ITEMS A LA LISTA DE OFERTAS
         $(".ofertas-container").prepend(devolverItem);   
@@ -178,9 +180,21 @@ let sumar;
 let precioTotal;
 function calcularCosto(){
     precioTotal = 0;
-    for(i=0; ofertasSeleccionada.length > i; i++){
-        sumar = ofertasSeleccionada[i].precio;
-        precioTotal += sumar;
-        $(".mostrar-costo").text(`${precioTotal}.000`);
+    if(ofertasSeleccionada.length > 0){
+        for(i=0; ofertasSeleccionada.length > i; i++){
+            sumar = ofertasSeleccionada[i].precio;
+            precioTotal += sumar;
+            $(".mostrar-costo").text(`${precioTotal}.000`);
+        }
+    }else{
+        $(".mostrar-costo").text(`${precioTotal}.000`); 
+    }
+}
+// VERIFICAR SI HAY ITEMS EN EL CARRITO
+function verificarItems(){
+    if(ofertasSeleccionada.length > 0){
+        carritoItems = true;
+    }else{
+        carritoItems = false;
     }
 }
