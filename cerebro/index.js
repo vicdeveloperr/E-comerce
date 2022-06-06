@@ -22,10 +22,14 @@ $("#cerrar-carrito").on("click", function(){
     }, 200)
 });
 // SELECCIONAR OFERTAS
-let ofertas = $(".ofertas-container").children(".ofertas-item");
-ofertas.on("click", function(){
-    $(this).toggleClass("oferta-seleccionada");
-});
+let ofertas;
+clickOfertas();
+function clickOfertas(){
+    ofertas = $(".ofertas-item");
+    ofertas.on("click", function(){
+        $(this).toggleClass("oferta-seleccionada");
+    });
+}
 // GUARDAR LAS OFERTAS SELECCIONADAS
 let ofertasSeleccionada = [];
 let items = [];
@@ -98,27 +102,63 @@ $("#agregar-al-carrito").on("click", function(){
             agregar = lista[posicion];
             ofertasSeleccionada.push(agregar);
             console.log(ofertasSeleccionada[i]);
+            // CALCULAAR COSTO TOTAL
+            precioTotal += ofertasSeleccionada[i].precio;
+            $(".mostrar-costo").text(`${precioTotal}.000`);
         }
         carritoItems = true;
         carritoInterfaz();
+        eliminarItem();    
     }else{
         false;
     }
+    // VACIAR ARRAYS
     ofertasSeleccionada.length = 0;
     items.length = 0;
     $(".oferta-seleccionada").removeClass("oferta-seleccionada");
 });
 // INTERFAZ CARRITO
-// MOSTRAR SELECCIÓN EN EL CARRITO
 function carritoInterfaz(){
     let item;
+    $(".oferta-seleccionada").addClass("carrito-item");
     $(".oferta-seleccionada").css({
         color: "#fff",
         fontWeight: "bold",
-        borderBottom: "2px solid #fff" 
+        border: "2px solid transparent",
+        borderBottomColor: "#fff" 
     });
     for(i=0; items.length > i; i++){
         item = $(".oferta-seleccionada")[i];
         $(".carrito__lista").append(item);
     }
+    // ICONO ELIMINAR ITEMS
+    $(".carrito-item").prepend("<button class='cerrar eliminar-item' aria-labelledby='eliminar-item'><img src='../multimedia/iconos/close.png' alt='cerrar' class='img-fluid'></button>");
+    $(".carrito-item").on("mouseenter", function(){
+        $(this).children(".eliminar-item").animate({
+            left: "0",
+            opacity: "1"
+        }, 200);
+    });
+    $(".carrito-item").on("mouseleave", function(){
+        $(this).children(".eliminar-item").animate({
+            left: "100%",
+            opacity: "0.7"
+        }, 200)
+    });
+}
+// ELIMINAR ITEMS
+let devolverItem;
+function eliminarItem(){
+    $(".eliminar-item").on("click", function(){
+        $(this).parent().css({
+            fontWeight: "400",
+            border: "none",
+    });
+        $(this).parent().removeClass("carrito-item");
+        devolverItem = $(this).parent()[0];
+    // DEVOLVER ITEMS A LA LISTA DE OFERTAS
+        $(".ofertas-container").prepend(devolverItem);   
+        $(this).remove();
+    // CALCULAR MONTO TOTAL
+    });
 }
