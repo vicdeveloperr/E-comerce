@@ -122,6 +122,7 @@ button {
   z-index: 10;
   background-color: #000;
   left: 100%;
+  overflow: auto;
 }
 
 @media (max-width: 330px) {
