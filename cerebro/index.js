@@ -3,7 +3,6 @@ let botonCarrito = $("#desplegar-carrito");
 let mostrarCosto = $(".mostrar-costo");
 mostrarCosto.append(0);
 let carritoItems = false;
-
 // MOSTRAR CARRITO
 botonCarrito.on("click", function(){
     if(carritoItems == true){
@@ -36,54 +35,128 @@ let ofertasSeleccionada = [];
 let items = [];
 let posicion;
 let agregar;
-let lista = [{
-    precio: 9,
-    recarga: "80cp"
-},
-{
-    precio: 18,
-    recarga: "160cp"
-}, 
-{
-    precio: 33,
-    recarga: "420cp"
-}, 
-{
-    precio: 40,
-    recarga: "500cp"
-}, 
-{
-    precio: 48,
-    recarga: "580cp"
-}, 
-{
-    precio: 60,
-    recarga: "880cp"
-}, 
-{
-    precio: 120,
-    recarga: "1760cp"
-}, 
-{
-    precio: 145,
-    recarga: "2400cp"
-}, 
-{
-    precio: 195,
-    recarga: "3280cp"
-}, 
-{
-    precio: 235,
-    recarga: "5000cp"
-}, 
-{
-    precio: 380,
-    recarga: "7400cp"
-}, 
-{
-    precio: 550,
-    recarga: "10000cp"
-}];
+let lista;
+//  OFERTAS DE FREE FIRE O COD MOBILE
+if($(".ofertas-container")[0] == $(".ofertas-freFire")[0]){
+    lista = [
+    {
+        precio: 8,
+        recarga: "110"
+    },
+    {
+        precio: 16,
+        recarga: "210"
+    },
+    {
+        precio: 22,
+        recarga: "340"
+    },
+    {
+        precio: 35,
+        recarga: "572"
+    },
+    {
+        precio: 43,
+        recarga: "680"
+    },
+    {
+        precio: 50,
+        recarga: "792"
+    },
+    {
+        precio: 55,
+        recarga: "910"
+    },
+    {
+        precio: 70,
+        recarga: "1160"
+    },
+    {
+        precio: 78,
+        recarga: "1260"
+    },
+    {
+        precio: 85,
+        recarga: "1360"
+    },
+    {
+        precio: 90,
+        recarga: "1495"
+    },
+    {
+        precio: 105,
+        recarga: "1720"
+    },
+    {
+        precio: 140,
+        recarga: "2380"
+    },
+    {
+        precio: 160,
+        recarga: "2700"
+    },
+    {
+        precio: 185,
+        recarga: "3000"
+    },
+    {
+        precio: 260,
+        recarga: "4720"
+    },
+    {
+        precio: 330,
+        recarga: "6100"
+    }];
+}else if($(".ofertas-container")[0] == $(".ofertas-codMobile")[0]){
+    lista = [{
+        precio: 9,
+        recarga: "80cp"
+    },
+    {
+        precio: 18,
+        recarga: "160cp"
+    }, 
+    {
+        precio: 33,
+        recarga: "420cp"
+    }, 
+    {
+        precio: 40,
+        recarga: "500cp"
+    }, 
+    {
+        precio: 48,
+        recarga: "580cp"
+    }, 
+    {
+        precio: 60,
+        recarga: "880cp"
+    }, 
+    {
+        precio: 120,
+        recarga: "1760cp"
+    }, 
+    {
+        precio: 145,
+        recarga: "2400cp"
+    }, 
+    {
+        precio: 195,
+        recarga: "3280cp"
+    }, 
+    {
+        precio: 235,
+        recarga: "5000cp"
+    }, 
+    {
+        precio: 380,
+        recarga: "7400cp"
+    }, 
+    {
+        precio: 550,
+        recarga: "10000cp"
+    }]
+}
 $("#agregar-al-carrito").on("click", function(){
 
     for(e=0; $(".oferta-seleccionada").length > e; e++){
@@ -146,7 +219,6 @@ function carritoInterfaz(){
 }
 // ELIMINAR ITEMS
 let devolverItem;
-
 function eliminarItem(){
     $(".eliminar-item").on("click", function(){
         $(this).parent().css({
