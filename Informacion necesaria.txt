@@ -1,4 +1,0 @@
--Definir el metodo de pago
--Que le gustaría exponer en la home page
--Todos los productos que ofrece
--contacto

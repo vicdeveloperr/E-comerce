@@ -1,1 +1,0 @@
-Mostrar todos sus metódos de pago y que el cliente elija el que más le convenga, y te envie un mensaje con lo que compró y el comprobante. Y de ahí vos le haces la correspondiente recarga
